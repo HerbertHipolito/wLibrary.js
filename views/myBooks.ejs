@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Library</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body.css">
+</head>
+
+    <%-header%>
+
+    <body>
+        
+        <div id="books">
+            <div id="books-body">
+                <%inputs.forEach(book => {%>
+                    <div class="book-div">
+                        <p id="book-name" class="book-feature">Name: <%= book.name%></p>
+                        <p id="book-author" class="book-feature">author: <%= book.author%></p>
+                        <p id="book-edition" class="book-feature">edition: <%= book.edition%></p>
+                        <p id="book-price" class="book-feature">price: <%= book.price%></p>
+                        <p id="book-releaseData:" class="book-feature">Data de devolucao: <%= book.returnDate%></p>
+                    </div>
+                <%})%>
+            </div>
+        
+        </div>
+    </body>
+
+    <%-footer%>
+
+</html>

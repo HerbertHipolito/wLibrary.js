@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body.css">
+</head>
+
+<%-header%>
+
+<body>
+    <form action="" method="post">
+        
+        <label for="name" class="label-form-input">name</label><br>
+        <input type="text" class="form-input" name="name"><br>
+
+        <label for="author" class="label-form-input">author</label><br>
+        <input type="text" class="form-input" name="author"><br>
+
+        <label for="edition" class="label-form-input">edition</label><br>
+        <input type="number" class="form-input" name="edition"><br>
+
+        <label for="price" class="label-form-input">price</label><br>
+        <input type="number" class="form-input" step="0.001" name="price"><br>
+
+        <label for="releaseData" class="label-form-input">releaseData</label><br>
+        <input type="data" class="form-input" name="releaseData"><br>
+
+        <label for="stock" class="label-form-input">stock</label><br>
+        <input type="number" class="form-input" name="stock"><br>
+        
+        <label for="salesNumber" class="label-form-input">salesNumber</label><br>
+        <input type="number" class="form-input" name="salesNumber"><br>
+
+        <input type="submit" value="Submit" id="form-button">
+        <input type="reset" id="form-button">
+    </form>
+</body>
+
+<%-footer%>
+</html>

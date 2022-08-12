@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    font-size: 130%;
+
+}
+
+li{
+    background-color: black;
+    border-radius: 20px;
+    padding: 0.7%;
+
+}
+
+a{
+    color: white;
+}
+
+#header-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2% 0%;
+    border-bottom: 5px black solid;
+}
+
+#header-div-lineOne{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    text-decoration: none;
+    margin: 0 3%;
+    padding: 0 3%;
+}
+a{
+    text-decoration: none;
+}
+
+#header-div-lineOne a {
+    color:black;
+}
+
+#header-div-lineTwo-list{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    list-style-type:none;;
+    
+}
+
+
+#title-div{
+    
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    max-width: 50%;
+}
+
+#title{
+    font-size: 400%;
+    margin-bottom: 10%;
+    font-family: 'Brush Script MT', cursive;
+}
+
+#title2{
+    font-size: 180%;
+    font-family: 'Brush Script MT', cursive;
+}
+
+#title-image{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 3% 5%;
+}
+
+#image{
+    background-image: url('../images/books3.jpg');
+    padding: 20% 20%;
+    border-radius:  100%  
+}
+
+#header-div-lineOne p a {
+    color: black;
+}
+
+#header-div-lineOne-login{
+    margin: 0% 2%;
+}

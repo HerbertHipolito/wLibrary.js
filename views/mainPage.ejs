@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Library</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body.css">
+</head>
+
+    <%-header%>
+
+    <body>
+        <div id="title-image">
+            <div id="title-div">
+                <p id="title">Books</p>
+                <p id="title2">Acquire Knowledge and become a better person by reading our books for an affordable price. 
+                    Books allow you to access new worlds and open your mind to different manners of thinking. 
+                    Check out our books to participate in it </p>
+            </div>
+            <p id="image"></p>
+        </div>
+        <div id="books">
+            <div id="books-body">
+                <%inputs.forEach(book => {%>
+                    <div class="book-div">
+                        <p id="book-name" class="book-feature">Name: <%= book.name%></p>
+                        <p id="book-author" class="book-feature">author: <%= book.author%></p>
+                        <p id="book-edition" class="book-feature">edition: <%= book.edition%></p>
+                        <p id="book-price" class="book-feature">price: <%= book.price%></p>
+                        <p id="book-releaseData:" class="book-feature">releaseData: <%= book.releaseData%></p>
+                        <p id="book-stock" class="book-feature">stock: <%= book.stock%></p>
+                        <p id="book-salesNumber" class="book-feature">salesNumber: <%= book.salesNumber%></p>
+                    </div>
+                <%})%>
+            </div>
+        
+        </div>
+    </body>
+
+    <%-footer%>
+
+</html>

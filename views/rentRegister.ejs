@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body.css">
+</head>
+
+<%-header%>
+
+<body>
+
+    <form action="/employee/rent" method="post">
+        
+        <label for="bookName" class="label-form-input">Nome do livro:</label><br>
+        <input type="text" class="form-input" name="bookName"><br>
+
+        <label for="customerName" class="label-form-input">Nome do cliente:</label><br>
+        <input type="text" class="form-input" name="customerName"><br>
+
+        <input type="submit" value="Submit" id="form-button">
+        <input type="reset" id="form-button">
+
+    </form>
+    
+</body>
+
+<%-footer%>
+
+</html>
