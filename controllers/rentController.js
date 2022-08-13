@@ -72,8 +72,6 @@ const postRentController = async (req,res) =>{
                 "returnDate":dateTimeWeek
             })
 
-            console.log(resultRent);
-
             return res.status(400).redirect('/employee');
 
         }catch(error){

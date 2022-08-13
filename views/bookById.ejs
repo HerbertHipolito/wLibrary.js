@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body.css">
+</head>
+
+
+<%-header%>
+
+<body>
+
+    <div id="book-div">
+        <div class="book-div-class">    
+            <p class="book-div-text">Nome: <%=book.name%></p>
+        </div>
+        <div class="book-div-class">    
+            <p class="book-div-text"> Autor: <%=book.author%></p>
+        </div>
+        <div class="book-div-class">    
+            <p class="book-div-text"> Edição: <%=book.edition%></p>
+        </div>
+        <div class="book-div-class">    
+            <p class="book-div-text"> Price: <%=book.price%></p>
+        </div>
+        <div class="book-div-class">    
+            <p class="book-div-text"> Estoque: <%=book.stock%></p>
+        </div>
+        <div class="book-div-class">    
+            <p class="book-div-text"> Data de lançamento: <%=releaseData%></p>
+        </div>
+        <div class="book-div-class">    
+            <p class="book-div-text"> Número de vendas: <%=book.salesNumber%></p>
+        </div>
+        <div class="book-div-class">    
+            <p class="book-div-text"> Disponibildiade para alugar: <%=book.available%></p>
+        </div>
+    </div>
+</body>
+
+<%-footer%>
+</html>

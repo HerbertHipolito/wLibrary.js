@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const booksSchema = new Schema({
     name:{
         type:String,
-        required:true
+        required:true,
+        index:true
     },
     author:{
         type:String,
@@ -35,5 +36,7 @@ const booksSchema = new Schema({
         required:true
     }
 });
+
+booksSchema.index({$name:"text"});
 
 module.exports = mongoose.model('books',booksSchema);

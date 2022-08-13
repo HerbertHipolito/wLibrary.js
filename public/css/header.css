@@ -24,7 +24,7 @@ a{
     justify-content: center;
     flex-direction: column;
     padding: 2% 0%;
-    border-bottom: 5px black solid;
+    border-bottom: 1px black solid;
 }
 
 #header-div-lineOne{
@@ -41,6 +41,11 @@ a{
 
 #header-div-lineOne a {
     color:black;
+}
+
+#header-div-lineTwo{
+    max-width: 70vw;
+    margin: 0% 20%
 }
 
 #header-div-lineTwo-list{
@@ -62,13 +67,13 @@ a{
 }
 
 #title{
-    font-size: 400%;
+    font-size: 500%;
     margin-bottom: 10%;
     font-family: 'Brush Script MT', cursive;
 }
 
 #title2{
-    font-size: 180%;
+    font-size: 280%;
     font-family: 'Brush Script MT', cursive;
 }
 
@@ -90,6 +95,13 @@ a{
     color: black;
 }
 
-#header-div-lineOne-login{
-    margin: 0% 2%;
+#header-div-lineOne-login,#header-div-lineOne-my,#header-div-lineOne-logout,#header-div-lineOne-employeeLogin{
+    margin: 0% 1%;
+    margin-bottom: 2%;
+}
+
+#header-div-lineOne-employeeLogin:hover{
+
+    border-bottom: 3px solid black;
+    
 }

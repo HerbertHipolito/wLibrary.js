@@ -4,6 +4,8 @@ const tagsController =  require('./tagsController');
 const path =  require('path');
 const books =  require('../model/books');
 const rents = require('../model/rent');
+const {format} = require('date-fns');
+const moment = require('moment');
 
 const getBooksByAvailability = async (req,res) =>{
 
@@ -103,7 +105,7 @@ const postBookController = async (req,res)=>{
                 "author":req.body.author,
                 "edition":req.body.edition,
                 "price":req.body.price,
-                "releaseData":req.body.releaseData,
+                "releaseData":moment(req.body.releaseData,'DD/MM/YYYY'),
                 "stock":req.body.stock,
                 "salesNumber":req.body.salesNumber,
                 "available":1
@@ -112,7 +114,8 @@ const postBookController = async (req,res)=>{
             return res.redirect('/');
 
         }catch(error){
-            return res.status(400).json({'message':error});
+            console.log(error);
+            return res.status(400).json({'message':'error'});
         }
 
     }else{
@@ -159,5 +162,31 @@ const getMyBooksController = async (req,res) =>{
 
 
 }
+
+const getBookByName = async (req,res) =>{
+
+    if(!req?.params?.id) return res.status(401).json({'message':'Book id not received'});
+
+    var result = await books.findById(req.params.id);
+
+    if(!result) return res.status(401).json({'message':'book not found'});
+
+    const header = res.session?.authenticated ? 'headerLogged':'header';
+    const releaseData = `${format(result.releaseData,'dd/MM/yyyy')}`
+
+    tagsController([header,'footer']).then(
+
+        (tags)=>{
+            res.render(path.join('..','views','bookById'),{
+                header:tags[header],
+                footer:tags['footer'],
+                book:result,
+                releaseData:releaseData
+                }
+            )
+        }
+    )
+
+}
  
-module.exports = {getBestSellers,getMyBooksController,getBooksByAvailability,getAllBookControllerEmpl,regBookController,postBookController};
+module.exports = {getBookByName,getBestSellers,getMyBooksController,getBooksByAvailability,getAllBookControllerEmpl,regBookController,postBookController};

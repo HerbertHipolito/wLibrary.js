@@ -33,7 +33,6 @@ const getAccountController = async (req,res) =>{
                 var myRentedBookName = [];
                 conditionRents = true; //Modify the code to deal with multiple rents.
                 myRents.forEach(rents =>myRentedBookName.push(rents.bookName) );
-                //myRentedBooks = await books.find({name:myRents[0].bookName});
                 myRentedBooks = await books.find({name:myRentedBookName});
             }
         }

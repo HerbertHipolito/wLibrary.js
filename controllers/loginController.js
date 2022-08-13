@@ -23,8 +23,6 @@ const getLoginController = (req,res)=>{
 }
 
 const postLoginController = (req,res)=>{
-    
-    //https://www.youtube.com/watch?v=oYGhoHW7zqI
 
     if(req.session.authenticated){
         console.log(req.sessionID);
@@ -48,7 +46,7 @@ const postLoginController = (req,res)=>{
                 name,
                 role
             };
-            console.log(req.session.user);
+            
             tagsController(['headerLogin','footer']).then((tags)=>{
                 res.render(path.join('..','views','index'),{
                     header:tags['headerLogin'],

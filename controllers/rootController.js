@@ -27,4 +27,14 @@ const rootController = async (req,res)=>{
 };
 
 
-module.exports = {rootController};
+const searchBookController = async (req,res) =>{
+
+    if(!req.body?.msg) return res.status(400).json({'message':'Message not received'});
+
+    const resultSearch = await books.find({$text:{$search:'teste'}});
+
+    console.log(resultSearch);
+
+}
+
+module.exports = {rootController,searchBookController};

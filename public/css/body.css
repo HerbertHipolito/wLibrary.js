@@ -4,8 +4,8 @@ header,body,footer{
 
 #books{
     min-height: 75vh;
-    border-bottom: 5px black solid;
-    border-top: 5px black solid;
+    border-bottom: 1px black solid;
+    border-top: 1px black solid;
 }
 
 
@@ -13,6 +13,7 @@ header,body,footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
+    padding: 0% 2%;
 }
 
 .book-div{
@@ -23,4 +24,43 @@ header,body,footer{
 
 .book-feature{
     color: white;
+}
+
+form:not([id="search-bar-form"]){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 0%;
+    min-height: 65vh;
+}
+
+form label{
+    font-size: 150%;
+}
+
+form input:not([type="submit"],[type="reset"],[id="serch-bar-div-id"]){
+    margin-top: 1%;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 110%;
+}
+
+#serch-bar-div{
+    text-align: center;
+    margin: 3% 0%;
+}
+
+#serch-bar-div-id{
+    width: 30vw;
+    height: 3vh;
+    border-radius: 40px;
+    border:1px black solid;
+}
+
+#serch-bar-div-button{
+    background-color: black;
+    color: white;
+    padding: 8px;
 }

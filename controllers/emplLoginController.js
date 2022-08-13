@@ -48,16 +48,7 @@ const postEmplLoginController = (req,res) =>{
                 name,
                 role
             };
-            /*
-            tagsController(['headerLoggedEmpl','footer']).then((tags)=>{
-
-                res.render(path.join('..','views','index'),{
-                    header:tags['headerLoggedEmpl'],
-                    footer:tags['footer']
-                })
-
-            })
-            */
+            
             res.redirect('../employee');
         }   
     )

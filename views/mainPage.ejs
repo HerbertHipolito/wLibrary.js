@@ -25,24 +25,64 @@
             </div>
             <p id="image"></p>
         </div>
+
         <div id="books">
+
+            <div id="serch-bar-div">
+                <p>Filter by words</p>
+                <form action="./resultSearch" method="post" id="search-bar-form">    
+                    <input type="text" id="serch-bar-div-id" name="msg"><br>
+                </form>
+
+            </div>
+
             <div id="books-body">
                 <%inputs.forEach(book => {%>
+                    <a href=<%=`./books/${book._id}`%>>    
                     <div class="book-div">
                         <p id="book-name" class="book-feature">Name: <%= book.name%></p>
                         <p id="book-author" class="book-feature">author: <%= book.author%></p>
                         <p id="book-edition" class="book-feature">edition: <%= book.edition%></p>
                         <p id="book-price" class="book-feature">price: <%= book.price%></p>
-                        <p id="book-releaseData:" class="book-feature">releaseData: <%= book.releaseData%></p>
-                        <p id="book-stock" class="book-feature">stock: <%= book.stock%></p>
-                        <p id="book-salesNumber" class="book-feature">salesNumber: <%= book.salesNumber%></p>
                     </div>
+                    </a>
                 <%})%>
             </div>
         
         </div>
     </body>
+    <script>
 
+        //Creating a filter Bar. The book names that contain the typed letters in the Search Bar will be hidden.
+        var searchBar = document.getElementById('serch-bar-div-id');
+
+        searchBar.addEventListener("input", e=>{
+            var inputText = e.target.value;
+            var bookExist = [];
+            var bookDivs = document.getElementsByClassName('book-div');
+
+            if(inputText && inputText.length>0){
+                
+                for(let i=0;i<bookDivs.length;i++){
+                    var inputName =  bookDivs[i].firstElementChild.textContent; 
+                    var bookName = inputName.split(":",2);
+
+                    if(bookName[1].indexOf(inputText)===-1){
+                        bookDivs[i].parentNode.hidden = true;
+                    }else{
+                        bookDivs[i].parentNode.hidden = false;
+                    }
+                }
+                
+            }else{
+                if(inputText.length===0){
+                    for(let i=0;i<bookDivs.length;i++){
+                        bookDivs[i].parentNode.hidden = false;
+                    }
+                }
+            }
+        })
+    </script>
     <%-footer%>
 
 </html>
