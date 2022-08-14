@@ -7,12 +7,10 @@ const getLoginController = (req,res)=>{
     if(req.session.authenticated){
         return res.redirect('/');
     }
-
-    var header = 'headerLoginUser';    
-
-    tagsController([header,'bodyUser','footer']).then((tags)=>{
+    
+    tagsController(['headerLoginUser','bodyUser','footer']).then((tags)=>{
         res.render(path.join('..','views','login'),{
-            header:tags[header],
+            header:tags['headerLoginUser'],
             footer:tags['footer'],
             body:tags['bodyUser']
                 }

@@ -3,17 +3,17 @@ const tagsController = require('../controllers/tagsController');
 const {getEmployeesByNameAndMatch}  = require('../routes/api/employee');
 
 const getEmplLoginController = (req,res) =>{
-
+   
     if(req.session?.authenticated){
         console.log('You are already logged');
         return res.redirect('/');
     }
     else{
-        tagsController(['headerLogin','bodyUser','footer']).then(
+        tagsController(['headerLoginUser','bodyEmployee','footer']).then(
             (tags)=>{
                 res.render(path.join('..','views','login'),{
-                    header:tags['headerLogin'],
-                    body:tags['bodyUser'],
+                    header:tags['headerLoginUser'],
+                    body:tags['bodyEmployee'],
                     footer:tags['footer']
                     }
                 )

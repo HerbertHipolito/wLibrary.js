@@ -16,17 +16,18 @@ header,body,footer{
     padding: 0% 2%;
 }
 
-.book-div{
+.book-div,.rent-div,.body-book{
     margin: 1%;
     background-color: rgb(36, 35, 35);
     padding: 1%;
 }
 
-.book-feature{
+
+.book-feature,.rent-feature,.body-book{
     color: white;
 }
 
-form:not([id="search-bar-form"]){
+form:not([id="search-bar-form"]),#information{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,8 +41,8 @@ form label{
 
 form input:not([type="submit"],[type="reset"],[id="serch-bar-div-id"]){
     margin-top: 1%;
-    width: 20vw;
-    height: 5vh;
+    width: 30vw;
+    height: 3vh;
     border-radius: 20px;
     border: 1px solid black;
     font-size: 110%;
@@ -63,4 +64,21 @@ form input:not([type="submit"],[type="reset"],[id="serch-bar-div-id"]){
     background-color: black;
     color: white;
     padding: 8px;
+}
+
+#serch-bar-div-title{
+    font-size: 220%;
+    margin-bottom: 3%;
+}
+
+#sellsData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 75vh;   
+}
+
+.class-data{
+    margin: 1% 0%;
 }

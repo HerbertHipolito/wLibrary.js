@@ -14,7 +14,7 @@ const getUsersByNameAndMatch = async (login,pwd,res) =>{
 
     const usersSelected = await users.findOne({login:login});
     
-    if  (!usersSelected?.pwd) return res.status(400).json({'message':'Login not found '});
+    if  (!usersSelected?.pwd) return null;
 
     const match = await bcrypt.compare(pwd, usersSelected.pwd);
     

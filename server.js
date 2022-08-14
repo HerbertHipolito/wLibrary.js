@@ -10,6 +10,7 @@ const ejs = require('ejs');
 const connectDB = require('./config/dbconfig');
 const session = require('express-session'); 
 const store = new session.MemoryStore();
+const {isAuthUser,isAuthEmployee,isAuthEmployeeAndUser} =  require('./middlewares/auth');
 
 const connection = connectDB();
 
@@ -33,16 +34,16 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 
 app.use('/',require('./routes/root'));
 app.use('/login',require('./routes/login'));
-app.use('/logout',require('./routes/logout'));
+app.use('/logout',isAuthEmployeeAndUser,require('./routes/logout'));
 app.use('/register',require('./routes/register'));
 app.use('/books',require('./routes/books'));
-app.use('/myAccount',require('./routes/myAccount'));
-app.use('/employee',require('./routes/employee'));
-app.use('/employee/login',require('./routes/employeeLogin'));
-app.use('/employee/register',require('./routes/employeeRegister'));
-app.use('/employee/books',require('./routes/employeeBooks'));
-app.use('/employee/sales',require('./routes/employeeSales'));
-app.use('/employee/rent',require('./routes/employeeRent'));
+app.use('/emplLogin',require('./routes/employeeLogin'));
+app.use('/myAccount',isAuthEmployeeAndUser,require('./routes/myAccount'));
+app.use('/employee',isAuthEmployee,require('./routes/employee'));
+app.use('/employee/register',isAuthEmployee,require('./routes/employeeRegister'));
+app.use('/employee/books',isAuthEmployee,require('./routes/employeeBooks'));
+app.use('/employee/sales',isAuthEmployee,require('./routes/employeeSales'));
+app.use('/employee/rent',isAuthEmployee,require('./routes/employeeRent'));
 
 mongoose.connection.once('open',()=>{
     console.log('connected to mongoDB');

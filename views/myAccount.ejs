@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,28 +16,20 @@
 
 <%-header%>
 
-<body>
-    <div id="information">
-        <%console.log(inputNames)%>
-        <%for(inputName of inputNames){%>
-            <p class="inforClass"><%=inputName%></p>
-        <%}%>
+    <body>
+        <div id="information">
+                <%for(inputName of inputNames){%>
+                    <p class="inforClass">
+                        <%=inputName%>
+                    </p>
+                <%}%>
+        </div>
+    </body>
+    <%if(condition){%>
+        <button type="button"><a href="/">Back</a></button>
+        <%}else{%>
+            <button type="button"><a href="/employee/login">Back</a></button>
+            <%}%>
+     <%-footer%>
 
-        <%if(conditionRents){%>
-            <%books.forEach(book=>{%>
-            <div class="body-book">
-                <p><%=book.name%></p>
-                <p><%=book.author%></p>
-                <p><%=book.edition%></p>
-                </div>
-            <%})%>
-        <%}%>
-    </div>
-</body>
-<%if(condition){%>
-    <button type="button"><a href="/">Back</a></button>
-<%}else{%>
-    <button type="button"><a href="/employee/login">Back</a></button>
-<%}%>
-<%-footer%>
 </html>

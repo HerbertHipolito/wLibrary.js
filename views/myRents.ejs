@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/body.css">
+</head>
+<body>
+
+    <%-header%>
+
+    <body>
+        
+        <div id="books">
+            <div id="books-body">
+                <%inputs.forEach(rent => {%>
+                    <div class="rent-div">
+                        <p id="rent-name" class="rent-feature">Nome do cliente: <%= rent.customerName%></p>
+                        <p id="rent-author" class="rent-feature">Empregado que fez a operacao: <%= rent.employeeName%></p>
+                        <p id="rent-edition" class="rent-feature">Nome do livro: <%= rent.bookName%></p>
+                        <p id="rent-price" class="rent-feature">Data do aluguel: <%= rent.date%></p>
+                        <p id="rent-releaseData:" class="rent-feature">Data de devolucao: <%= rent.returnDate%></p>
+                    </div>
+                <%})%>
+            </div>
+        
+        </div>
+    </body>
+
+    <%-footer%>
+    
+</body>
+</html>
